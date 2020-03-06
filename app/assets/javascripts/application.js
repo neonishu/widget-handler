@@ -11,6 +11,54 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require activestorage
-//= require turbolinks
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
 //= require_tree .
+
+$(document).ready(function(){
+  $('.login_button').click(function(){        
+    $('#signupModal').modal('hide');
+    $('#loginModal').modal('show');
+  });
+
+  $('.signup_button').click(function(){          
+    $('#loginModal').modal('hide');
+    $('#signupModal').modal('show');
+  });
+
+  $("#search_button").click(function(){
+    var val = $("#search_input").val()
+    $.ajax({
+      type: "get",
+      url: "/",
+      dataType: "script",
+      data: {val: val}
+    });
+  })
+
+  $("#search_form").submit(function(e){
+    e.preventDefault();
+    var val = $("#search_input").val()
+    $.ajax({
+      type: "get",
+      url: "/",
+      dataType: "script",
+      data: {val: val}
+    });
+  })
+
+  $("#search_form_user").submit(function(e){
+    e.preventDefault();
+    debugger;
+    var id = $("#user_id").data('id')
+    var val = $("#search_input_user").val()
+    $.ajax({
+      type: "get",
+      url: "/users/"+ id+ "/widgets",
+      dataType: "script",
+      data: {val: val}
+    });
+  })
+
+});
