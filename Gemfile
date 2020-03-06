@@ -24,7 +24,7 @@ gem 'oauth2'
 # Simpleform for quick validation and messages on UI
 gem 'simple_form'
 # Bootstrap for quick beautiful interfaces
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 # Fontawesome, NOTE: Not using for commercial purpose
 gem 'font-awesome-rails'
